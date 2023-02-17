@@ -333,7 +333,7 @@ try:
             index = 0
             for j in range(len(features)):
                 for f in features[j]:
-                    score = kpu.Feat.feature_compare(f, feature)
+                    score = kpu.Feat.compare(f, feature)
                     if score > high:
                         high = score
                         index = j
