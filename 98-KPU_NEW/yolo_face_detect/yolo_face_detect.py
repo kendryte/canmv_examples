@@ -38,7 +38,8 @@ try:
         a = img.draw_string(0, 0, "%2.1ffps" %(fps), color=(0, 60, 128), scale=2.0)
         lcd.display(img)
         gc.collect()
-except:
+except Exception as e:
+    print(e)
     kpu.deinit()
     del kpu
     gc.collect()

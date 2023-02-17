@@ -37,6 +37,10 @@ try:
 
         a=img.draw_string(4,3,display_str,color=(0,0,0),scale=2)
         lcd.display(img)
-except:
-    print("xxx")
+except Exception as e:
+    print(e)
+
     kpu.deinit()
+    del kpu
+    gc.collect()
+

@@ -345,7 +345,8 @@ try:
             img.draw_string(0, 60, msg_notification, color=(255, 0, 0), scale=2)
         lcd.display(img)
         fps = clock.fps()
-except:
+except Exception as e:
+    print(e)
     kpu.deinit()
     del kpu
     gc.collect()

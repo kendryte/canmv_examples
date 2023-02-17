@@ -96,7 +96,9 @@ try:
 
         a = img.draw_string(0, 0, "%2.1ffps" %(fps), color=(0, 60, 255), scale=2.0)
         lcd.display(img)
-except:
+except Exception as e:
+    print(e)
+
     kpu.deinit()
     ld5_kpu.deinit()
     fac_kpu.deinit()

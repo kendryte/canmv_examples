@@ -16,7 +16,7 @@ od_img = image.Image(size=(320,256))
 anchor_head_detect = (0.1074, 0.1458, 0.1367, 0.2137, 0.1758, 0.2824, 0.2441, 0.3333, 0.2188, 0.4167, 0.2969, 0.5000, 0.4102, 0.6667, 0.6094, 0.9722, 1.2364, 1.6915)
 head_kpu = KPU()
 print("ready load model")
-# head_kpu.load("/sd/KPU/head_body_detect/uint8_head_detect_v1_old.kmodel")
+# head_kpu.load("/sd/KPU/head_body_detect/uint8_head_detect_v1_old.kmodel") # this mode is little big, we burn it to flash to load.
 head_kpu.load(0x300000)
 yolo = head_kpu.Yolo2()
 yolo.init(anchor_head_detect, 0.7, 0.2)
@@ -39,7 +39,8 @@ try:
         fps = clock.fps()
         a = img.draw_string(0, 0, "%2.1ffps" %(fps), color=(0, 60, 128), scale=2.0)
         lcd.display(img)
-except:
+except Exception as e:
+    print(e)
     head_kpu.deinit()
     del head_kpu
     gc.collect()

@@ -80,7 +80,8 @@ try:
         # print("mem free:",gc.mem_free())
         # print("heap free:",utils.heap_free())
         gc.collect()
-except:
+except Exception as e:
+    print(e)
     kpu.deinit()
     lp_recog_kpu.deinit()
     del kpu

@@ -43,7 +43,7 @@ ld5_kpu.load("/sd/KPU/face_recognization/ld5.kmodel")
 
 fea_kpu = KPU()
 print("ready load model")
-# fea_kpu.load("/sd/KPU/face_recognization/feature_extraction.kmodel")
+# fea_kpu.load("/sd/KPU/face_recognization/feature_extraction.kmodel") # this mode is little big, we burn it to flash to load.
 fea_kpu.load(0x300000)
 
 start_processing = False
