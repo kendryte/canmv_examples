@@ -1,0 +1,5 @@
+venv
+canmv-ide-resource*.zip
+.idea
+.vscode
+
