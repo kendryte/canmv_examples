@@ -29,7 +29,7 @@ if __name__ == '__main__':
     if not version:
         raise 'examples.txt not found'
     print('Version:', version)
-    resource_path = os.path.join(script_path, f'canmv-ide-resources-v{version}.zip')
+    resource_path = os.path.join(script_path, f'canmv-ide-resources-{version}.zip')
     print('Resource:', resource_path)
     with zipfile.ZipFile(resource_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
         zip_directory(os.path.join(script_path, 'examples'), zipf, 'examples')
